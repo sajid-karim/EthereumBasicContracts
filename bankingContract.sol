@@ -47,7 +47,6 @@ contract BankingSystem {
     }
 
 
-    // TASK 1
     function openAccount(string memory firstName, string memory lastName) public {
         // Code Here!!
         client = tx.origin;
@@ -82,7 +81,6 @@ contract BankingSystem {
 
     }
     
-    // TASK 2
     function getDetails() public view returns (uint balance, string memory first_name, string memory last_name, uint loanAmount) {   
         // Code Here!!
         if(getClients(tx.origin))
@@ -92,7 +90,6 @@ contract BankingSystem {
     }
 
 
-    // TASK 3
     // minimum deposit of 1 ether.
     // 1 ether = 10^18 Wei.   
     function depositAmount() public payable {    
@@ -120,7 +117,6 @@ contract BankingSystem {
     }
 
     
-    // Task 4
     function withDraw(uint withdrawalAmount) public {                
         // Code Here!!
         if(checkOwner(tx.origin))
@@ -148,7 +144,6 @@ contract BankingSystem {
     }
     
         
-    // Task 5
     function TransferEth(address payable reciepent, uint transferAmount) public {
         // Code Here!!
         if(checkOwner(tx.origin))
@@ -178,7 +173,6 @@ contract BankingSystem {
     }
 
 
-    // Task 6.1
     function depositTopUp() public payable {
         // Code Here!!
         if(checkOwner(tx.origin))
@@ -192,7 +186,6 @@ contract BankingSystem {
     }
 
 
-    // Task 6.2
     function TakeLoan(uint loanAmount) public {
         // Code Here!!
         if(checkOwner(tx.origin))
@@ -223,7 +216,6 @@ contract BankingSystem {
     }
         
 
-    // Task 6.3
     function InquireLoan() public view returns (uint loanValue) {
         // Code Here!!
         if(getClients(tx.origin))
@@ -239,7 +231,6 @@ contract BankingSystem {
     }
 
 
-    // Task 7 
     function returnLoan() public payable  {
         // Code Here!!
         if(getClients(tx.origin))
